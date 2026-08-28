@@ -89,8 +89,8 @@ async function post(path: string, body: unknown, e: Env) {
 }
 
 const VALID_SIGN = {
-	organisationName: 'Acme Co',
-	organisationType: 'SME',
+	organizationName: 'Acme Co',
+	organizationType: 'SME',
 	contactName: 'A Person',
 	contactEmail: 'person@acme.test',
 	role: 'CTO',
@@ -99,10 +99,10 @@ const VALID_SIGN = {
 };
 
 const VALID_CONSULT = {
-	organisationName: 'Acme Co',
+	organizationName: 'Acme Co',
 	contactName: 'A Person',
 	contactEmail: 'person@acme.test',
-	organisationType: 'SME',
+	organizationType: 'SME',
 	context: 'Our decision routing is a bottleneck.',
 	'cf-turnstile-response': 'token',
 };
@@ -161,13 +161,13 @@ describe('POST /api/sign', () => {
 		expect(body).toEqual({ ok: true });
 
 		const row = await env.DB.prepare(
-			'SELECT organisation_name, organisation_type, contact_email, role, status FROM signatories WHERE contact_email = ?',
+			'SELECT organization_name, organization_type, contact_email, role, status FROM signatories WHERE contact_email = ?',
 		)
 			.bind('person@acme.test')
 			.first();
 		expect(row).toMatchObject({
-			organisation_name: 'Acme Co',
-			organisation_type: 'SME',
+			organization_name: 'Acme Co',
+			organization_type: 'SME',
 			role: 'CTO',
 			status: 'pending',
 		});
@@ -179,10 +179,10 @@ describe('POST /api/sign', () => {
 
 	it('rejects a missing contact email with a field error', async () => {
 		const t = testEnv();
-		const { organisationName, organisationType, contactName, ack } = VALID_SIGN;
+		const { organizationName, organizationType, contactName, ack } = VALID_SIGN;
 		const { response, body } = await post(
 			'/api/sign',
-			{ organisationName, organisationType, contactName, ack, 'cf-turnstile-response': 'token' },
+			{ organizationName, organizationType, contactName, ack, 'cf-turnstile-response': 'token' },
 			t.env,
 		);
 
@@ -191,7 +191,7 @@ describe('POST /api/sign', () => {
 		expect(t.sent).toHaveLength(0);
 	});
 
-	it('rejects an unchecked acknowledgement — partial adoption is not listed', async () => {
+	it('rejects an unchecked acknowledgment — partial adoption is not listed', async () => {
 		const t = testEnv();
 		const { response, body } = await post('/api/sign', { ...VALID_SIGN, ack: false }, t.env);
 
@@ -255,12 +255,12 @@ describe('POST /api/consultation', () => {
 		expect(tables.results).toHaveLength(0);
 	});
 
-	it('rejects a missing organisation with a field error', async () => {
+	it('rejects a missing organization with a field error', async () => {
 		const t = testEnv();
-		const { response, body } = await post('/api/consultation', { ...VALID_CONSULT, organisationName: '' }, t.env);
+		const { response, body } = await post('/api/consultation', { ...VALID_CONSULT, organizationName: '' }, t.env);
 
 		expect(response.status).toBe(400);
-		expect(body.errors.organisationName).toBeTruthy();
+		expect(body.errors.organizationName).toBeTruthy();
 		expect(t.sent).toHaveLength(0);
 	});
 

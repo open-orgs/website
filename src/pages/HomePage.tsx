@@ -14,7 +14,6 @@ import { AXES, AXIS_ORDER } from '../content/axes';
 const NAV = [
 	{ href: '#principles', label: 'Principles' },
 	{ href: '#practice', label: 'Practice' },
-	{ href: '#audience', label: 'Who this is for' },
 	{ href: '#join', label: 'Join' },
 ];
 
@@ -26,8 +25,8 @@ const FOOTER_COLUMNS = [
 export function HomePage({ turnstileSiteKey }: { turnstileSiteKey: string }) {
 	return (
 		<Layout
-			title="Open Orgs — three principles for the optimal form of organisation"
-			description="A search for the optimal form of human and agent organisation: long-lasting, economically efficient, socially optimal. Three principles, three axes, no proprietary framework."
+			title="Open Orgs: three principles for the optimal form of organization"
+			description="A search for the optimal form of human and agent organization: long-lasting, economically efficient, socially optimal. Three principles, three axes, no proprietary framework."
 		>
 			<SiteHeader links={NAV} />
 			<main>

@@ -1,5 +1,5 @@
 /**
- * Transient confirmation. Navy pill, bottom-centre. Rendered once, empty and hidden; the client
+ * Transient confirmation. Navy pill, bottom-center. Rendered once, empty and hidden; the client
  * fills and reveals it — there is only ever one on screen.
  */
 export function Toast() {

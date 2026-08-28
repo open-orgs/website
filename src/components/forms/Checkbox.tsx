@@ -1,7 +1,7 @@
 /**
  * Checkbox with an optional description line. The native input is visually hidden but still the
  * real control — checked state drives the custom box through a CSS sibling selector, so this
- * works with no JavaScript and keeps native keyboard and validation behaviour.
+ * works with no JavaScript and keeps native keyboard and validation behavior.
  *
  * Never ships pre-checked: adopting the principles is the user's action, not a default.
  */

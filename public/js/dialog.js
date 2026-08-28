@@ -14,7 +14,7 @@
 	};
 
 	var SUCCESS = {
-		sign: "Organisation submitted. We'll follow up by email.",
+		sign: "Organization submitted. We'll follow up by email.",
 		consultation: "Request received. We'll follow up by email to schedule a call.",
 	};
 

@@ -84,7 +84,7 @@ export function AxisMark({ axis, size = 56, active, tone = 'default', class: cls
 	const color = inverse ? 'var(--navy-200)' : `var(--axis-${axis})`;
 	const edge = active ? color : inverse ? 'var(--navy-400)' : 'var(--navy-300)';
 	const hub = active ? color : inverse ? 'var(--navy-200)' : 'var(--navy-700)';
-	const satFill = inverse ? 'var(--navy-900)' : 'var(--grey-0)';
+	const satFill = inverse ? 'var(--navy-900)' : 'var(--gray-0)';
 	const satStroke = active ? color : inverse ? 'var(--navy-300)' : 'var(--navy-400)';
 
 	return (

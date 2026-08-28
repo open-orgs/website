@@ -110,6 +110,7 @@
 	font-family: var(--font-sans);
 	font-weight: var(--weight-semibold);
 	letter-spacing: 0.005em;
+	line-height: 1;
 	border-radius: var(--radius-button);
 	border: 1px solid transparent;
 	cursor: pointer;
@@ -176,7 +177,7 @@
 }
 
 .oo-button--inverse {
-	background: var(--grey-0);
+	background: var(--gray-0);
 	color: var(--navy-900);
 }
 .oo-button--inverse:hover {
@@ -196,24 +197,17 @@
 	border-bottom-color: var(--navy-700);
 }
 
-/* Press is a 1px nudge — never a scale-down, never a colour flash. */
+/* Press is a 1px nudge — never a scale-down, never a color flash. */
 .oo-button:active:not(:disabled) {
 	transform: translateY(1px);
 }
 
-/* Disabled is a grey fill, never a reduced opacity on the whole control. */
+/* Disabled is a gray fill, never a reduced opacity on the whole control. */
 .oo-button:disabled {
 	background: var(--action-disabled-bg);
 	color: var(--action-disabled-text);
 	border-color: transparent;
 	cursor: not-allowed;
-}
-
-a.oo-button {
-	border-bottom: 1px solid transparent;
-}
-a.oo-button--link {
-	border-bottom-color: var(--navy-300);
 }
 
 /* ================= Card ================= */
@@ -306,8 +300,8 @@ a.oo-button--link {
 }
 
 .oo-badge--neutral {
-	background: var(--grey-100);
-	color: var(--grey-700);
+	background: var(--gray-100);
+	color: var(--gray-700);
 }
 .oo-badge--navy {
 	background: var(--axis-decision-tint);
@@ -466,7 +460,7 @@ a.oo-button--link {
 	font-weight: var(--weight-light);
 	font-size: var(--size-xl);
 	line-height: 1.44;
-	color: var(--grey-700);
+	color: var(--gray-700);
 }
 
 .oo-hero__actions {
@@ -611,7 +605,7 @@ a.oo-button--link {
 
 .oo-inverse__heading {
 	margin-top: var(--space-lg);
-	color: var(--grey-0);
+	color: var(--gray-0);
 	max-width: 20ch;
 }
 
@@ -701,7 +695,7 @@ a.oo-button--link {
 	font-weight: var(--weight-light);
 	font-size: var(--size-lg);
 	line-height: 1.42;
-	color: var(--grey-0);
+	color: var(--gray-0);
 	max-width: 26ch;
 }
 
@@ -760,7 +754,7 @@ a.oo-button--link {
 	font-family: var(--font-display);
 	font-size: var(--size-md);
 	line-height: 1.25;
-	color: var(--grey-0);
+	color: var(--gray-0);
 }
 
 .oo-footer__principle-optimizes {
@@ -1003,7 +997,7 @@ a.oo-button--link {
 	display: inline-flex;
 	align-items: center;
 	background: var(--navy-900);
-	color: var(--grey-0);
+	color: var(--gray-0);
 	border-radius: var(--radius-pill);
 	padding: 12px 20px;
 	box-shadow: var(--shadow-lg);

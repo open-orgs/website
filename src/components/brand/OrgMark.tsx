@@ -9,8 +9,8 @@ type Tone = 'ink' | 'accent' | 'inverse' | 'mono';
 type Variant = 'mark' | 'lens' | 'tiers';
 
 const TONES: Record<Tone, { ring: string; curve: string; opt: string; fill: string }> = {
-	ink: { ring: 'var(--navy-900)', curve: 'var(--navy-400)', opt: 'var(--axis-decision)', fill: 'var(--grey-0)' },
-	accent: { ring: 'var(--navy-700)', curve: 'var(--navy-300)', opt: 'var(--axis-network)', fill: 'var(--grey-0)' },
+	ink: { ring: 'var(--navy-900)', curve: 'var(--navy-400)', opt: 'var(--axis-decision)', fill: 'var(--gray-0)' },
+	accent: { ring: 'var(--navy-700)', curve: 'var(--navy-300)', opt: 'var(--axis-network)', fill: 'var(--gray-0)' },
 	inverse: { ring: '#ffffff', curve: 'var(--navy-300)', opt: '#ffffff', fill: 'var(--navy-900)' },
 	mono: { ring: 'currentColor', curve: 'currentColor', opt: 'currentColor', fill: 'none' },
 };
@@ -26,7 +26,7 @@ interface OrgMarkProps {
 
 export function OrgMark({ variant = 'mark', size = 40, tone = 'ink', rings = 4, label, class: cls }: OrgMarkProps) {
 	const t = TONES[tone];
-	// Below 26px the strokes thicken and the inner O grows, so the centre stays open at 16px.
+	// Below 26px the strokes thicken and the inner O grows, so the center stays open at 16px.
 	const small = size < 26;
 	const a11y = label ? { role: 'img', 'aria-label': label } : { 'aria-hidden': 'true' };
 	const common = { viewBox: '0 0 64 64', width: size, height: size, class: cls, ...a11y };

@@ -3,7 +3,7 @@ import { Logotype } from '../brand/Logotype';
 import { Button } from '../core/Button';
 
 /**
- * Sticky site header: lockup left, links centre-right, two actions.
+ * Sticky site header: lockup left, links center-right, two actions.
  *
  * The design system's version carries one action. This site has two goals of equal standing, so
  * it carries both — primary solid, secondary ghost. Two solid buttons side by side would read as
@@ -19,7 +19,7 @@ export function SiteHeader({ links }: { links: Link[] }) {
 	return (
 		<header class="oo-header">
 			<div class="oo-header__inner">
-				<a class="oo-header__lockup" href="#top" aria-label="Open Orgs — home">
+				<a class="oo-header__lockup" href="#top" aria-label="Open Orgs home">
 					<OrgMark variant="mark" size={22} tone="ink" />
 					<Logotype size={21} />
 				</a>
