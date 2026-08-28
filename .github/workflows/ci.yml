@@ -23,7 +23,7 @@ jobs:
       - run: npm ci
 
       # Both tsconfigs: the root one covers src, test/tsconfig.json covers the suite itself.
-      - run: npm run typecheck
+      - run: npm run check
 
       # The Workers pool runs fully locally — no Cloudflare credentials, no network. Nothing here
       # needs a secret, and nothing here can reach the real Email Sending service or D1.

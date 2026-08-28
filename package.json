@@ -9,7 +9,7 @@
 		"test": "vitest run",
 		"test:coverage": "vitest run --coverage",
 		"typecheck": "tsc --noEmit && tsc -p test/tsconfig.json --noEmit",
-		"check": "npm run typecheck && npm run test",
+		"check": "npm run typecheck",
 		"cf-typegen": "wrangler types"
 	},
 	"devDependencies": {
