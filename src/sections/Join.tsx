@@ -32,7 +32,7 @@ export function Join() {
 				<Card class="oo-join__card">
 					<h3 class="oo-join__card-title">Request a consultation</h3>
 					<p class="oo-join__card-body">
-						A call about what adopting the principles would mean for your organisation — where they would bind, and what would have to
+						A call about what adopting the principles would mean for your organisation: where they would bind, and what would have to
 						change. No cost, no engagement.
 					</p>
 					<Button block size="lg" variant="secondary" class="oo-join__card-action" data-oo-open="consultation">

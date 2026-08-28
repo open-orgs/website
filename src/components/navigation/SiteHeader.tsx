@@ -19,7 +19,7 @@ export function SiteHeader({ links }: { links: Link[] }) {
 	return (
 		<header class="oo-header">
 			<div class="oo-header__inner">
-				<a class="oo-header__lockup" href="#top" aria-label="Open Orgs — home">
+				<a class="oo-header__lockup" href="#top" aria-label="Open Orgs home">
 					<OrgMark variant="mark" size={22} tone="ink" />
 					<Logotype size={21} />
 				</a>

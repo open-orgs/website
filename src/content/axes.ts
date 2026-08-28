@@ -46,7 +46,7 @@ export const AXES: Record<AxisKey, Axis> = {
 export const AXIS_ORDER: AxisKey[] = ['decision', 'skills', 'network'];
 
 export const PRINCIPLE_COPY: Record<AxisKey, string> = {
-	decision: 'Everyone materially affected by a decision has a route into it before it is drafted — not a veto, a route.',
+	decision: 'Everyone materially affected by a decision has a route into it before it is drafted: not a veto, a route.',
 	skills: 'Every role has at least two people who can hold it. Indispensability is a defect, not a distinction.',
 	network: 'Every boundary is an interface. If a process cannot be joined from outside, it is not finished.',
 };

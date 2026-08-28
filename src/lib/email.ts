@@ -46,11 +46,10 @@ function rows(pairs: [string, string][]): { text: string; html: string } {
 	};
 }
 
-const PRINCIPLES_TEXT = AXIS_ORDER.map((k) => `${String(AXES[k].n).padStart(2, '0')} ${AXES[k].label} — ${AXES[k].axis}`).join('\n');
+const PRINCIPLES_TEXT = AXIS_ORDER.map((k) => `${String(AXES[k].n).padStart(2, '0')} ${AXES[k].label}: ${AXES[k].axis}`).join('\n');
 
 const PRINCIPLES_HTML = AXIS_ORDER.map(
-	(k) =>
-		`<p style="margin:0 0 6px">${String(AXES[k].n).padStart(2, '0')} <strong>${esc(AXES[k].label)}</strong> — ${esc(AXES[k].axis)}</p>`,
+	(k) => `<p style="margin:0 0 6px">${String(AXES[k].n).padStart(2, '0')} <strong>${esc(AXES[k].label)}</strong>: ${esc(AXES[k].axis)}</p>`,
 ).join('');
 
 /* ---------------------------------- sign ---------------------------------- */
@@ -77,19 +76,19 @@ export function sendSignConfirmation(env: Ctx, input: SignInput) {
 	return send(env, {
 		to: input.contactEmail,
 		replyTo: env.ADMIN_EMAIL,
-		subject: 'Open Orgs — your organisation has signed the principles',
+		subject: 'Open Orgs: your organisation has signed the principles',
 		text:
 			`${input.contactName},\n\n` +
 			`${input.organisationName} is recorded as adopting the three principles.\n\n` +
 			`${PRINCIPLES_TEXT}\n\n` +
-			`The principles are in the public domain. There is no membership tier and no certification — ` +
-			`what follows is the practice: publish the register, run the two-deep audit, list the interfaces.\n\n` +
+			`The principles are in the public domain. There is no membership tier and no certification. ` +
+			`What follows is the practice: publish the register, run the two-deep audit, list the interfaces.\n\n` +
 			`Reply to this message if anything needs correcting.\n`,
 		html: wrap(
 			`<p style="margin:0 0 16px">${esc(input.contactName)},</p>` +
 				`<p style="margin:0 0 16px"><strong>${esc(input.organisationName)}</strong> is recorded as adopting the three principles.</p>` +
 				`<div style="margin:0 0 16px">${PRINCIPLES_HTML}</div>` +
-				`<p style="margin:0 0 16px">The principles are in the public domain. There is no membership tier and no certification — what follows is the practice: publish the register, run the two-deep audit, list the interfaces.</p>` +
+				`<p style="margin:0 0 16px">The principles are in the public domain. There is no membership tier and no certification. What follows is the practice: publish the register, run the two-deep audit, list the interfaces.</p>` +
 				`<p style="margin:0">Reply to this message if anything needs correcting.</p>`,
 		),
 	});
@@ -124,7 +123,7 @@ export function sendConsultationConfirmation(env: Ctx, input: ConsultationInput)
 	return send(env, {
 		to: input.contactEmail,
 		replyTo: env.ADMIN_EMAIL,
-		subject: 'Open Orgs — your consultation request',
+		subject: 'Open Orgs: your consultation request',
 		text:
 			`${input.contactName},\n\n` +
 			`Your request for a call about ${input.organisationName} has been received. ` +

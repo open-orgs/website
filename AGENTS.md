@@ -39,3 +39,10 @@ If the application uses Durable Objects or Workflows, refer to the relevant best
 
 - Durable Objects: https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/
 - Workflows: https://developers.cloudflare.com/workflows/build/rules-of-workflows/
+
+# Website Copy
+
+Never use an em dash (—) in website copy: visible UI text, email subject lines and bodies, page
+titles, meta descriptions, aria-labels, or any other user-facing string. Use a colon, comma, period,
+or semicolon instead, whichever reads most naturally for the sentence. This applies to copy only,
+not code comments.
