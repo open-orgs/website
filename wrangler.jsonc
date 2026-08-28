@@ -7,38 +7,47 @@
 	"name": "openorgs-website",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-08-25",
-	"compatibility_flags": [
-		"global_fetch_strictly_public"
-	],
+	"compatibility_flags": ["global_fetch_strictly_public"],
 	"assets": {
-		// The path to the directory containing the `index.html` file to be served at `/`
-		"directory": "./public"
+		// Token CSS, the JS islands and the favicon. Served before the Worker runs.
+		"directory": "./public",
 	},
 	"observability": {
-		"enabled": true
+		"enabled": true,
 	},
-	"upload_source_maps": true
+	"upload_source_maps": true,
+	// Wrangler provisions DNS and the certificate for a zone already on the account.
+	"routes": [
+		{
+			"pattern": "openorgs.org",
+			"custom_domain": true,
+		},
+	],
 	/**
-	 * Smart Placement
-	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	 * Public values only. ADMIN_EMAIL and TURNSTILE_SECRET_KEY are secrets — see .env.example.
 	 */
-	// "placement": {  "mode": "smart" }
+	"vars": {
+		"SENDER_EMAIL": "hello@openorgs.org",
+		// Public by design — the widget's secret key is a Worker secret, see .env.example.
+		"TURNSTILE_SITE_KEY": "0x4AAAAAAEfP8D0bqZDlk-WB",
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "openorgs-website-db",
+			"database_id": "e2f521c5-f837-42f4-908a-e9fa7030d128",
+			"migrations_dir": "./migrations",
+		},
+	],
 	/**
-	 * Bindings
-	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
-	 * databases, object storage, AI inference, real-time communication and more.
-	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 * Deliberately unrestricted: the Worker mails both the admin and arbitrary submitters, so
+	 * `allowed_destination_addresses` must stay unset. `remote: true` proxies local dev sends to
+	 * the real service — there is no local emulation for email.
 	 */
-	/**
-	 * Environment Variables
-	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
-	 * Note: Use secrets to store sensitive data.
-	 * https://developers.cloudflare.com/workers/configuration/secrets/
-	 */
-	// "vars": {  "MY_VARIABLE": "production_value" }
-	/**
-	 * Service Bindings (communicate between multiple Workers)
-	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
-	 */
-	// "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
+	"send_email": [
+		{
+			"name": "EMAIL",
+			"remote": true,
+		},
+	],
 }

@@ -1,0 +1,41 @@
+:root {
+	/* ---- Elevation. Navy-tinted, low, wide. Never black, never more than two layers ---- */
+	--shadow-none: none;
+	--shadow-hairline: 0 0 0 1px var(--border-hairline);
+	--shadow-xs: 0 1px 2px rgba(9, 30, 57, 0.06);
+	--shadow-sm: 0 1px 2px rgba(9, 30, 57, 0.05), 0 2px 8px rgba(9, 30, 57, 0.04);
+	--shadow-md: 0 2px 4px rgba(9, 30, 57, 0.05), 0 8px 24px rgba(9, 30, 57, 0.07);
+	--shadow-lg: 0 4px 8px rgba(9, 30, 57, 0.05), 0 20px 48px rgba(9, 30, 57, 0.1);
+	--shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+	--shadow-focus: 0 0 0 3px rgba(62, 127, 216, 0.28);
+
+	--elevation-card: var(--shadow-hairline);
+	--elevation-card-hover: 0 0 0 1px var(--border-default), var(--shadow-md);
+	--elevation-popover: var(--shadow-lg);
+
+	/* ---- Motion. Long, calm, no bounce. Movement, not bounce ---- */
+	--ease-standard: cubic-bezier(0.32, 0.08, 0.24, 1); /* @kind other */
+	--ease-out: cubic-bezier(0.16, 0.84, 0.32, 1); /* @kind other */
+	--ease-in: cubic-bezier(0.6, 0, 0.9, 0.4); /* @kind other */
+	--duration-instant: 90ms; /* @kind other */
+	--duration-fast: 160ms; /* @kind other */
+	--duration-base: 240ms; /* @kind other */
+	--duration-slow: 420ms; /* @kind other */
+	--duration-reveal: 720ms; /* @kind other */
+	--transition-control:
+		color var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard),
+		border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+
+	/* ---- Blur / transparency (only on scrims and sticky headers) ---- */
+	--blur-sticky: saturate(1.4) blur(14px); /* @kind other */
+	--veil-header: rgba(255, 255, 255, 0.82);
+	--veil-inverse: rgba(9, 30, 57, 0.72);
+
+	/* ---- Network motif geometry ---- */
+	--node-size: 7px;
+	--node-size-lg: 11px;
+	--edge-width: 1px;
+	--edge-color: var(--navy-300);
+	--edge-color-active: var(--axis-network);
+	--edge-opacity: 0.5; /* @kind other */
+}
