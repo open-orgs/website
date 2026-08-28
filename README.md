@@ -92,7 +92,7 @@ configured on the widget.
 ## Commands
 
 ```sh
-npm run dev                    # local, at http://localhost:8788
+npm run dev                    # local, at http://localhost:8787
 npm test                       # one run, in the Workers runtime, then exit
 npm run test:coverage          # istanbul coverage over src/
 npm run typecheck              # tsc over src and over the suite
