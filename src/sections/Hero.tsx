@@ -18,8 +18,8 @@ export function Hero() {
 				</Eyebrow>
 				<h1 class="oo-hero__heading">Organisations are networks, or they are bottlenecks.</h1>
 				<p class="oo-hero__lede">
-					Open Orgs is a search for the optimal form of human and agent organisation — long-lasting, economically
-					efficient, socially optimal. Three principles. Three axes. No proprietary framework.
+					Open Orgs is a search for the optimal form of human and agent organisation — long-lasting, economically efficient, socially
+					optimal. Three principles. Three axes. No proprietary framework.
 				</p>
 				<div class="oo-hero__actions">
 					<Button size="lg" href="#principles" iconAfter={<Icon name="arrow-right" size={18} />}>

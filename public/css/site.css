@@ -115,7 +115,9 @@
 	cursor: pointer;
 	text-decoration: none;
 	white-space: nowrap;
-	transition: var(--transition-control), transform var(--duration-instant) var(--ease-standard);
+	transition:
+		var(--transition-control),
+		transform var(--duration-instant) var(--ease-standard);
 }
 
 .oo-button--sm {
@@ -223,7 +225,9 @@ a.oo-button--link {
 	padding: var(--space-xl);
 	box-shadow: var(--elevation-card);
 	overflow: hidden;
-	transition: box-shadow var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard);
+	transition:
+		box-shadow var(--duration-base) var(--ease-standard),
+		transform var(--duration-base) var(--ease-standard);
 }
 
 .oo-card--sunken {

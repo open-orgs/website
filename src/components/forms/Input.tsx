@@ -1,4 +1,4 @@
-import { Field } from './Field';
+import { Field, fieldDescribedBy } from './Field';
 
 /** Single-line or multiline text field. */
 interface InputProps {
@@ -14,18 +14,7 @@ interface InputProps {
 	autocomplete?: string;
 }
 
-export function Input({
-	id,
-	name,
-	label,
-	type = 'text',
-	hint,
-	required,
-	multiline,
-	rows = 4,
-	placeholder,
-	autocomplete,
-}: InputProps) {
+export function Input({ id, name, label, type = 'text', hint, required, multiline, rows = 4, placeholder, autocomplete }: InputProps) {
 	return (
 		<Field label={label} htmlFor={id} hint={hint} required={required}>
 			{multiline ? (
@@ -36,7 +25,7 @@ export function Input({
 					class="oo-input oo-input--multiline"
 					placeholder={placeholder}
 					required={required}
-					aria-describedby={`${id}-error`}
+					aria-describedby={fieldDescribedBy(id, hint)}
 				/>
 			) : (
 				<input
@@ -47,7 +36,7 @@ export function Input({
 					placeholder={placeholder}
 					required={required}
 					autocomplete={autocomplete}
-					aria-describedby={`${id}-error`}
+					aria-describedby={fieldDescribedBy(id, hint)}
 				/>
 			)}
 		</Field>

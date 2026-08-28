@@ -1,6 +1,6 @@
-import { applyD1Migrations, type D1Migration } from "cloudflare:test";
-import { env } from "cloudflare:workers";
-import { beforeEach } from "vitest";
+import { applyD1Migrations, type D1Migration } from 'cloudflare:test';
+import { env } from 'cloudflare:workers';
+import { beforeEach } from 'vitest';
 
 // The migrations array is handed in as a binding by vitest.config.mts.
 declare global {
@@ -17,5 +17,5 @@ await applyD1Migrations(env.DB, env.TEST_MIGRATIONS);
 // every test would see whatever rows the tests before it wrote and the suite would only pass in
 // one order.
 beforeEach(async () => {
-	await env.DB.prepare("DELETE FROM signatories").run();
+	await env.DB.prepare('DELETE FROM signatories').run();
 });

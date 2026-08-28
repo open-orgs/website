@@ -9,8 +9,7 @@ import { ORGANISATION_TYPES } from '../content/axes';
 const required = (max: number, message: string) =>
 	z.string({ error: message }).trim().min(1, message).max(max, 'That is longer than this field accepts.');
 
-const optional = (max: number) =>
-	z.string().trim().max(max, 'That is longer than this field accepts.').optional().or(z.literal(''));
+const optional = (max: number) => z.string().trim().max(max, 'That is longer than this field accepts.').optional().or(z.literal(''));
 
 const email = (message: string) => required(200, message).pipe(z.email('That email address is not valid.'));
 

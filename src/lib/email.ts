@@ -5,11 +5,7 @@ const SENDER_NAME = 'Open Orgs';
 
 /** Every value in these emails is user-supplied, so nothing reaches the HTML part unescaped. */
 function esc(value: string): string {
-	return value
-		.replace(/&/g, '&amp;')
-		.replace(/</g, '&lt;')
-		.replace(/>/g, '&gt;')
-		.replace(/"/g, '&quot;');
+	return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 interface Ctx {
@@ -46,9 +42,7 @@ function rows(pairs: [string, string][]): { text: string; html: string } {
 	const present = pairs.filter(([, v]) => v);
 	return {
 		text: present.map(([k, v]) => `${k}: ${v}`).join('\n'),
-		html: present
-			.map(([k, v]) => `<p style="margin:0 0 8px"><strong>${esc(k)}:</strong> ${esc(v)}</p>`)
-			.join(''),
+		html: present.map(([k, v]) => `<p style="margin:0 0 8px"><strong>${esc(k)}:</strong> ${esc(v)}</p>`).join(''),
 	};
 }
 
@@ -56,7 +50,7 @@ const PRINCIPLES_TEXT = AXIS_ORDER.map((k) => `${String(AXES[k].n).padStart(2, '
 
 const PRINCIPLES_HTML = AXIS_ORDER.map(
 	(k) =>
-		`<p style="margin:0 0 6px">${String(AXES[k].n).padStart(2, '0')} <strong>${esc(AXES[k].label)}</strong> — ${esc(AXES[k].axis)}</p>`
+		`<p style="margin:0 0 6px">${String(AXES[k].n).padStart(2, '0')} <strong>${esc(AXES[k].label)}</strong> — ${esc(AXES[k].axis)}</p>`,
 ).join('');
 
 /* ---------------------------------- sign ---------------------------------- */
@@ -96,7 +90,7 @@ export function sendSignConfirmation(env: Ctx, input: SignInput) {
 				`<p style="margin:0 0 16px"><strong>${esc(input.organisationName)}</strong> is recorded as adopting the three principles.</p>` +
 				`<div style="margin:0 0 16px">${PRINCIPLES_HTML}</div>` +
 				`<p style="margin:0 0 16px">The principles are in the public domain. There is no membership tier and no certification — what follows is the practice: publish the register, run the two-deep audit, list the interfaces.</p>` +
-				`<p style="margin:0">Reply to this message if anything needs correcting.</p>`
+				`<p style="margin:0">Reply to this message if anything needs correcting.</p>`,
 		),
 	});
 }
@@ -111,7 +105,10 @@ export function sendConsultationAdminNotification(env: Ctx, input: ConsultationI
 		['Email', input.contactEmail],
 	]);
 	const context = input.context
-		? { text: `\nWhat is prompting this:\n${input.context}\n`, html: `<p style="margin:16px 0 4px"><strong>What is prompting this</strong></p><p style="margin:0;white-space:pre-wrap">${esc(input.context)}</p>` }
+		? {
+				text: `\nWhat is prompting this:\n${input.context}\n`,
+				html: `<p style="margin:16px 0 4px"><strong>What is prompting this</strong></p><p style="margin:0;white-space:pre-wrap">${esc(input.context)}</p>`,
+			}
 		: { text: '', html: '' };
 
 	return send(env, {
@@ -139,7 +136,7 @@ export function sendConsultationConfirmation(env: Ctx, input: ConsultationInput)
 			`<p style="margin:0 0 16px">${esc(input.contactName)},</p>` +
 				`<p style="margin:0 0 16px">Your request for a call about <strong>${esc(input.organisationName)}</strong> has been received. We will follow up by email to find a time.</p>` +
 				`<p style="margin:0 0 16px">The call is about where the three principles would bind in your organisation and what would have to change. There is no cost and no engagement attached to it.</p>` +
-				`<div style="margin:0">${PRINCIPLES_HTML}</div>`
+				`<div style="margin:0">${PRINCIPLES_HTML}</div>`,
 		),
 	});
 }

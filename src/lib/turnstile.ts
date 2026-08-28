@@ -12,12 +12,7 @@ interface SiteverifyResponse {
  * action mismatch is a rejection, never a pass. Tokens are single-use — the client resets the
  * widget before allowing a retry.
  */
-export async function verifyTurnstile(
-	token: string | undefined,
-	secret: string,
-	action: string,
-	remoteip?: string
-): Promise<boolean> {
+export async function verifyTurnstile(token: string | undefined, secret: string, action: string, remoteip?: string): Promise<boolean> {
 	if (!token) return false;
 
 	const body = new FormData();

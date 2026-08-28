@@ -46,12 +46,9 @@ export const AXES: Record<AxisKey, Axis> = {
 export const AXIS_ORDER: AxisKey[] = ['decision', 'skills', 'network'];
 
 export const PRINCIPLE_COPY: Record<AxisKey, string> = {
-	decision:
-		'Everyone materially affected by a decision has a route into it before it is drafted — not a veto, a route.',
-	skills:
-		'Every role has at least two people who can hold it. Indispensability is a defect, not a distinction.',
-	network:
-		'Every boundary is an interface. If a process cannot be joined from outside, it is not finished.',
+	decision: 'Everyone materially affected by a decision has a route into it before it is drafted — not a veto, a route.',
+	skills: 'Every role has at least two people who can hold it. Indispensability is a defect, not a distinction.',
+	network: 'Every boundary is an interface. If a process cannot be joined from outside, it is not finished.',
 };
 
 /** What each principle asks an organisation to actually do. */
@@ -70,23 +67,9 @@ export const PRACTICE: Record<AxisKey, { title: string; body: string }> = {
 	},
 };
 
-export const ORGANISATION_TYPES = [
-	'Enterprise',
-	'SME',
-	'Startup',
-	'Academic',
-	'Public sector',
-	'Co-operative',
-] as const;
+export const ORGANISATION_TYPES = ['Enterprise', 'SME', 'Startup', 'Academic', 'Public sector', 'Co-operative'] as const;
 
 /** Who the principles are addressed to. Deliberately broad — not a claim about adoption. */
-export const AUDIENCES = [
-	'Enterprise',
-	'SME',
-	'Startups',
-	'Academic',
-	'Public sector',
-	'Co-operatives',
-] as const;
+export const AUDIENCES = ['Enterprise', 'SME', 'Startups', 'Academic', 'Public sector', 'Co-operatives'] as const;
 
 export const STATEMENT = 'Organisations are networks, or they are bottlenecks.';

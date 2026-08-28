@@ -15,12 +15,7 @@ interface CardProps {
 }
 
 export function Card({ children, axis, interactive, tone = 'default', class: cls, ...rest }: CardProps) {
-	const className = [
-		'oo-card',
-		tone !== 'default' ? `oo-card--${tone}` : '',
-		interactive ? 'oo-card--interactive' : '',
-		cls,
-	]
+	const className = ['oo-card', tone !== 'default' ? `oo-card--${tone}` : '', interactive ? 'oo-card--interactive' : '', cls]
 		.filter(Boolean)
 		.join(' ');
 	return (

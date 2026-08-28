@@ -17,13 +17,7 @@ export function ConsultationForm({ turnstileSiteKey }: { turnstileSiteKey: strin
 			submitLabel="Request a consultation"
 			turnstileSiteKey={turnstileSiteKey}
 		>
-			<Input
-				id="consult-organisation"
-				name="organisationName"
-				label="Organisation"
-				required
-				autocomplete="organization"
-			/>
+			<Input id="consult-organisation" name="organisationName" label="Organisation" required autocomplete="organization" />
 			<Input id="consult-name" name="contactName" label="Your name" required autocomplete="name" />
 			<Input id="consult-email" name="contactEmail" label="Your email" type="email" required autocomplete="email" />
 			<Select id="consult-type" name="organisationType" label="Organisation type" options={ORGANISATION_TYPES} />

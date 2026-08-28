@@ -13,6 +13,6 @@ pages.get('/', (c) =>
 		<>
 			{DOCTYPE}
 			<HomePage turnstileSiteKey={c.env.TURNSTILE_SITE_KEY} />
-		</>
-	)
+		</>,
+	),
 );

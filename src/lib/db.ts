@@ -9,15 +9,9 @@ export async function insertSignatory(db: D1Database, input: SignInput): Promise
 		.prepare(
 			`INSERT INTO signatories
 			   (organisation_name, organisation_type, contact_name, contact_email, role)
-			 VALUES (?, ?, ?, ?, ?)`
+			 VALUES (?, ?, ?, ?, ?)`,
 		)
-		.bind(
-			input.organisationName,
-			input.organisationType,
-			input.contactName,
-			input.contactEmail,
-			input.role || null
-		)
+		.bind(input.organisationName, input.organisationType, input.contactName, input.contactEmail, input.role || null)
 		.run();
 
 	return Number(result.meta.last_row_id);

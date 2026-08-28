@@ -1,41 +1,41 @@
 :root {
-  /* ---- Space (4px base; 2px only for optical nudges) ---- */
-  --space-0: 0;
-  --space-px: 1px;
-  --space-2xs: 2px;
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 12px;
-  --space-lg: 16px;
-  --space-xl: 24px;
-  --space-2xl: 32px;
-  --space-3xl: 48px;
-  --space-4xl: 64px;
-  --space-5xl: 96px;
-  --space-6xl: 128px;
-  --space-7xl: 176px;
+	/* ---- Space (4px base; 2px only for optical nudges) ---- */
+	--space-0: 0;
+	--space-px: 1px;
+	--space-2xs: 2px;
+	--space-xs: 4px;
+	--space-sm: 8px;
+	--space-md: 12px;
+	--space-lg: 16px;
+	--space-xl: 24px;
+	--space-2xl: 32px;
+	--space-3xl: 48px;
+	--space-4xl: 64px;
+	--space-5xl: 96px;
+	--space-6xl: 128px;
+	--space-7xl: 176px;
 
-  /* ---- Layout ---- */
-  --layout-max: 1200px;
-  --layout-prose: 720px;
-  --layout-gutter: 32px;
-  --layout-gutter-sm: 20px;
-  --layout-section-y: 112px;
-  --layout-section-y-tight: 72px;
-  --layout-rule: 1px;
+	/* ---- Layout ---- */
+	--layout-max: 1200px;
+	--layout-prose: 720px;
+	--layout-gutter: 32px;
+	--layout-gutter-sm: 20px;
+	--layout-section-y: 112px;
+	--layout-section-y-tight: 72px;
+	--layout-rule: 1px;
 
-  /* ---- Radius. 16px is the card default; nothing is fully square except rules ---- */
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-2xl: 32px;
-  --radius-pill: 999px;
-  --radius-card: var(--radius-lg);
-  --radius-control: var(--radius-sm);
-  --radius-button: var(--radius-pill);
-  --radius-field: var(--radius-sm);
-  --radius-chip: var(--radius-pill);
-  --radius-panel: var(--radius-xl);
+	/* ---- Radius. 16px is the card default; nothing is fully square except rules ---- */
+	--radius-xs: 4px;
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--radius-xl: 24px;
+	--radius-2xl: 32px;
+	--radius-pill: 999px;
+	--radius-card: var(--radius-lg);
+	--radius-control: var(--radius-sm);
+	--radius-button: var(--radius-pill);
+	--radius-field: var(--radius-sm);
+	--radius-chip: var(--radius-pill);
+	--radius-panel: var(--radius-xl);
 }

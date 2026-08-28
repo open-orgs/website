@@ -21,7 +21,7 @@ consultation.post('/api/consultation', async (c) => {
 		typeof token === 'string' ? token : undefined,
 		c.env.TURNSTILE_SECRET_KEY,
 		'consultation',
-		c.req.header('cf-connecting-ip')
+		c.req.header('cf-connecting-ip'),
 	);
 	if (!ok) {
 		return c.json({ message: 'That could not be verified as a human submission. Try again.' }, 403);

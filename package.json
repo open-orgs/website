@@ -9,13 +9,18 @@
 		"test": "vitest run",
 		"test:coverage": "vitest run --coverage",
 		"typecheck": "tsc --noEmit && tsc -p test/tsconfig.json --noEmit",
-		"check": "npm run typecheck",
-		"cf-typegen": "wrangler types"
+		"check": "npm run format:check && npm run typecheck",
+		"cf-typegen": "wrangler types",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-plugin": "^1.0.0",
 		"@types/node": "^26.4.0",
 		"@vitest/coverage-istanbul": "^4.1.11",
+		"husky": "^9.1.7",
+		"prettier": "3.9.6",
 		"typescript": "^5.5.2",
 		"vitest": "~4.1.0",
 		"wrangler": "^4.127.0"

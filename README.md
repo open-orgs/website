@@ -42,12 +42,12 @@ Public values live in `wrangler.jsonc` under `vars` (`SENDER_EMAIL`, `TURNSTILE_
 (`ADMIN_EMAIL`, `TURNSTILE_SECRET_KEY`) live in `.env` / `.dev.vars`, both gitignored — copy the
 `.example` files.
 
-| Resource | Value |
-| --- | --- |
-| D1 database | `openorgs-website-db` |
+| Resource         | Value                                                                           |
+| ---------------- | ------------------------------------------------------------------------------- |
+| D1 database      | `openorgs-website-db`                                                           |
 | Turnstile widget | `openorgs-website`, mode `managed`, domains `openorgs.org` + `www.openorgs.org` |
-| Email Sending | `openorgs.org` (already onboarded — check with `wrangler email sending list`) |
-| Custom domain | `openorgs.org` |
+| Email Sending    | `openorgs.org` (already onboarded — check with `wrangler email sending list`)   |
+| Custom domain    | `openorgs.org`                                                                  |
 
 ### Getting the Turnstile keys
 
@@ -67,10 +67,10 @@ or in the dashboard: **Turnstile → Add widget**, name `openorgs-website`, host
 and `www.openorgs.org`, widget mode **Managed**. Creating it prints both keys — and they look alike,
 both starting `0x4AAAAAAA…`, so keep track of which is which:
 
-| Key | Secret? | Goes in |
-| --- | --- | --- |
-| Site key | no — it ships in the page HTML | `wrangler.jsonc` → `vars.TURNSTILE_SITE_KEY` |
-| Secret key | yes | `.env` → `TURNSTILE_SECRET_KEY`, uploaded by `npx wrangler deploy --secrets-file .env` |
+| Key        | Secret?                        | Goes in                                                                                |
+| ---------- | ------------------------------ | -------------------------------------------------------------------------------------- |
+| Site key   | no — it ships in the page HTML | `wrangler.jsonc` → `vars.TURNSTILE_SITE_KEY`                                           |
+| Secret key | yes                            | `.env` → `TURNSTILE_SECRET_KEY`, uploaded by `npx wrangler deploy --secrets-file .env` |
 
 The secret is shown once at creation. After that, read it from the widget's settings in the dashboard,
 or rotate it there. `npx wrangler turnstile widget list` recovers the site key of a widget that

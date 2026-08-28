@@ -1,4 +1,4 @@
-import { Field } from './Field';
+import { Field, fieldDescribedBy } from './Field';
 
 /** Native select with the brand chevron. */
 interface SelectProps {
@@ -15,7 +15,7 @@ export function Select({ id, name, label, options, placeholder = 'Select…', hi
 	return (
 		<Field label={label} htmlFor={id} hint={hint} required={required}>
 			<div class="oo-select">
-				<select id={id} name={name} class="oo-select__control" required={required} aria-describedby={`${id}-error`}>
+				<select id={id} name={name} class="oo-select__control" required={required} aria-describedby={fieldDescribedBy(id, hint)}>
 					<option value="">{placeholder}</option>
 					{options.map((o) => (
 						<option value={o}>{o}</option>

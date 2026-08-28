@@ -96,7 +96,7 @@
 					},
 					function () {
 						return { status: res.status, body: {} };
-					}
+					},
 				);
 			})
 			.then(function (r) {
@@ -149,7 +149,7 @@
 						e.preventDefault();
 						submit(f, n);
 					};
-				})(form, name)
+				})(form, name),
 			);
 
 			var closers = form.querySelectorAll('[data-oo-close]');
@@ -161,7 +161,7 @@
 							var dialog = document.getElementById('dialog-' + n);
 							if (dialog) dialog.close();
 						};
-					})(name)
+					})(name),
 				);
 			}
 		}

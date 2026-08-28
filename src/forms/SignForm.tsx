@@ -20,13 +20,7 @@ export function SignForm({ turnstileSiteKey }: { turnstileSiteKey: string }) {
 			<Input id="sign-name" name="contactName" label="Your name" required autocomplete="name" />
 			<Input id="sign-email" name="contactEmail" label="Your email" type="email" required autocomplete="email" />
 			<Input id="sign-role" name="role" label="Your role" hint="Optional." autocomplete="organization-title" />
-			<Checkbox
-				id="sign-ack"
-				name="ack"
-				label="We adopt all three principles"
-				description="Partial adoption is not listed."
-				required
-			/>
+			<Checkbox id="sign-ack" name="ack" label="We adopt all three principles" description="Partial adoption is not listed." required />
 		</Dialog>
 	);
 }

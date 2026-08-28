@@ -1,65 +1,65 @@
 :root {
-  /* ---- Size scale (px, ~1.22 ratio) ---- */
-  --size-3xs: 11px;
-  --size-2xs: 12px;
-  --size-xs: 13px;
-  --size-sm: 15px;
-  --size-md: 17px;
-  --size-lg: 20px;
-  --size-xl: 25px;
-  --size-2xl: 31px;
-  --size-3xl: 39px;
-  --size-4xl: 49px;
-  --size-5xl: 62px;
-  --size-6xl: 78px;
+	/* ---- Size scale (px, ~1.22 ratio) ---- */
+	--size-3xs: 11px;
+	--size-2xs: 12px;
+	--size-xs: 13px;
+	--size-sm: 15px;
+	--size-md: 17px;
+	--size-lg: 20px;
+	--size-xl: 25px;
+	--size-2xl: 31px;
+	--size-3xl: 39px;
+	--size-4xl: 49px;
+	--size-5xl: 62px;
+	--size-6xl: 78px;
 
-  /* ---- Weight. The serif never goes above 600; the sans never below 300 ---- */
-  --weight-light: 300;
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
+	/* ---- Weight. The serif never goes above 600; the sans never below 300 ---- */
+	--weight-light: 300;
+	--weight-regular: 400;
+	--weight-medium: 500;
+	--weight-semibold: 600;
+	--weight-bold: 700;
 
-  /* ---- Leading ---- */
-  --leading-tight: 1.04;
-  --leading-display: 1.12;
-  --leading-snug: 1.3;
-  --leading-body: 1.62;
-  --leading-loose: 1.75;
+	/* ---- Leading ---- */
+	--leading-tight: 1.04;
+	--leading-display: 1.12;
+	--leading-snug: 1.3;
+	--leading-body: 1.62;
+	--leading-loose: 1.75;
 
-  /* ---- Tracking ---- */
-  --tracking-display: -0.022em;
-  --tracking-heading: -0.012em;
-  --tracking-normal: 0;
-  --tracking-wide: 0.02em;
-  --tracking-eyebrow: 0.13em;
+	/* ---- Tracking ---- */
+	--tracking-display: -0.022em;
+	--tracking-heading: -0.012em;
+	--tracking-normal: 0;
+	--tracking-wide: 0.02em;
+	--tracking-eyebrow: 0.13em;
 
-  /* ---- Measure ---- */
-  --measure-narrow: 34ch;
-  --measure-body: 66ch;
-  --measure-wide: 78ch;
+	/* ---- Measure ---- */
+	--measure-narrow: 34ch;
+	--measure-body: 66ch;
+	--measure-wide: 78ch;
 
-  /* ================= Semantic roles ================= */
-  --type-display-font: var(--font-display);
-  --type-display-weight: var(--weight-light);
-  --type-display-tracking: var(--tracking-display);
-  --type-display-leading: var(--leading-display);
+	/* ================= Semantic roles ================= */
+	--type-display-font: var(--font-display);
+	--type-display-weight: var(--weight-light);
+	--type-display-tracking: var(--tracking-display);
+	--type-display-leading: var(--leading-display);
 
-  --type-heading-font: var(--font-display);
-  --type-heading-weight: var(--weight-regular);
+	--type-heading-font: var(--font-display);
+	--type-heading-weight: var(--weight-regular);
 
-  --type-body-font: var(--font-sans);
-  --type-body-weight: var(--weight-regular);
-  --type-body-leading: var(--leading-body);
+	--type-body-font: var(--font-sans);
+	--type-body-weight: var(--weight-regular);
+	--type-body-leading: var(--leading-body);
 
-  --type-lede-font: var(--font-serif);
-  --type-lede-weight: var(--weight-light);
+	--type-lede-font: var(--font-serif);
+	--type-lede-weight: var(--weight-light);
 
-  --type-eyebrow-font: var(--font-mono);
-  --type-eyebrow-size: var(--size-2xs);
-  --type-eyebrow-tracking: var(--tracking-eyebrow);
+	--type-eyebrow-font: var(--font-mono);
+	--type-eyebrow-size: var(--size-2xs);
+	--type-eyebrow-tracking: var(--tracking-eyebrow);
 
-  --type-data-font: var(--font-mono);
-  --type-ui-font: var(--font-sans);
-  --type-ui-weight: var(--weight-medium);
+	--type-data-font: var(--font-mono);
+	--type-ui-font: var(--font-sans);
+	--type-ui-weight: var(--weight-medium);
 }

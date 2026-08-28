@@ -22,7 +22,7 @@ sign.post('/api/sign', async (c) => {
 		typeof token === 'string' ? token : undefined,
 		c.env.TURNSTILE_SECRET_KEY,
 		'sign',
-		c.req.header('cf-connecting-ip')
+		c.req.header('cf-connecting-ip'),
 	);
 	if (!ok) {
 		return c.json({ message: 'That could not be verified as a human submission. Try again.' }, 403);
@@ -33,10 +33,7 @@ sign.post('/api/sign', async (c) => {
 	// The row is the source of truth. A mail that fails to send is logged, not surfaced —
 	// losing the signature to a transient SMTP problem would be the worse outcome.
 	try {
-		await Promise.all([
-			sendSignAdminNotification(c.env, parsed.data, id),
-			sendSignConfirmation(c.env, parsed.data),
-		]);
+		await Promise.all([sendSignAdminNotification(c.env, parsed.data, id), sendSignConfirmation(c.env, parsed.data)]);
 	} catch (error) {
 		console.error('sign: email failed', { id, error });
 	}

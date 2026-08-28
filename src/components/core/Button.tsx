@@ -35,13 +35,7 @@ export function Button({
 	iconAfter,
 	...rest
 }: ButtonProps) {
-	const className = [
-		'oo-button',
-		`oo-button--${variant}`,
-		`oo-button--${size}`,
-		block ? 'oo-button--block' : '',
-		cls,
-	]
+	const className = ['oo-button', `oo-button--${variant}`, `oo-button--${size}`, block ? 'oo-button--block' : '', cls]
 		.filter(Boolean)
 		.join(' ');
 

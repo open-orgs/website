@@ -31,12 +31,7 @@ export function Dialog({ name, eyebrow, title, intro, submitLabel, turnstileSite
 
 				<div class="oo-dialog__body">{children}</div>
 
-				<div
-					class="cf-turnstile oo-turnstile"
-					data-sitekey={turnstileSiteKey}
-					data-action={name}
-					data-appearance="interaction-only"
-				/>
+				<div class="cf-turnstile oo-turnstile" data-sitekey={turnstileSiteKey} data-action={name} data-appearance="interaction-only" />
 
 				<p class="oo-dialog__status" role="alert" data-oo-status hidden />
 

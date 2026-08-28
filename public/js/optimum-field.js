@@ -102,10 +102,22 @@
 
 	function pathD(p) {
 		return (
-			'M' + p[0][0].toFixed(1) + ' ' + p[0][1].toFixed(1) +
-			' C' + p[1][0].toFixed(1) + ' ' + p[1][1].toFixed(1) +
-			' ' + p[2][0].toFixed(1) + ' ' + p[2][1].toFixed(1) +
-			' ' + p[3][0].toFixed(1) + ' ' + p[3][1].toFixed(1)
+			'M' +
+			p[0][0].toFixed(1) +
+			' ' +
+			p[0][1].toFixed(1) +
+			' C' +
+			p[1][0].toFixed(1) +
+			' ' +
+			p[1][1].toFixed(1) +
+			' ' +
+			p[2][0].toFixed(1) +
+			' ' +
+			p[2][1].toFixed(1) +
+			' ' +
+			p[3][0].toFixed(1) +
+			' ' +
+			p[3][1].toFixed(1)
 		);
 	}
 

@@ -13,8 +13,8 @@ export function Principles() {
 					<h2 class="oo-section__heading">Three constraints, applied without exception</h2>
 				</div>
 				<p class="oo-section__aside">
-					Each principle pushes one axis to its extreme. Taken together they describe an organisation that cannot
-					quietly centralise, cannot hoard a skill, and cannot close a boundary.
+					Each principle pushes one axis to its extreme. Taken together they describe an organisation that cannot quietly centralise, cannot
+					hoard a skill, and cannot close a boundary.
 				</p>
 			</div>
 			<div class="oo-principles__grid">
