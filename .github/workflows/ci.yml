@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # Both tsconfigs: the root one covers src, test/tsconfig.json covers the suite itself.
+      - run: npm run typecheck
+
+      # The Workers pool runs fully locally — no Cloudflare credentials, no network. Nothing here
+      # needs a secret, and nothing here can reach the real Email Sending service or D1.
+      - run: npm test

@@ -1,0 +1,87 @@
+:root {
+  /* ---- Base: navy (institutional anchor, hue ~215) ---- */
+  --navy-50: #f4f7fb;
+  --navy-100: #e6edf6;
+  --navy-200: #c8d7e9;
+  --navy-300: #9db6d3;
+  --navy-400: #6a8cb5;
+  --navy-500: #43648f;
+  --navy-600: #234b78;
+  --navy-700: #123a6b;
+  --navy-800: #0d2c52;
+  --navy-900: #091e39;
+  --navy-950: #061320;
+
+  /* ---- Base: cool grey (surfaces, rules, quiet text) ---- */
+  --grey-0: #ffffff;
+  --grey-50: #f7f8fa;
+  --grey-100: #eef0f3;
+  --grey-200: #e0e4e9;
+  --grey-300: #c6ccd4;
+  --grey-400: #9aa2ad;
+  --grey-500: #6f7883;
+  --grey-600: #545c66;
+  --grey-700: #3d444c;
+  --grey-800: #282d33;
+  --grey-900: #16191d;
+
+  /* ---- The three principles: one hue each, all cool, always in this order ---- */
+  --axis-decision: #123a6b;   /* All Affected — extreme consultation */
+  --axis-skills: #0e6e7d;     /* No One Is Indispensable — extreme competition */
+  --axis-network: #3e7fd8;    /* Open Systems — extreme integration */
+  --axis-decision-tint: #e7edf7;
+  --axis-skills-tint: #e2f1f3;
+  --axis-network-tint: #e8f0fd;
+
+  /* ---- Single warm accent. Sparingly: one per view, never as a surface fill ---- */
+  --ember-400: #d69a4e;
+  --ember-500: #b4762a;
+  --ember-600: #8e5a1c;
+  --ember-tint: #f8f0e2;
+
+  /* ---- Semantic status ---- */
+  --status-ok: #1f7a5c;
+  --status-warn: #b4762a;
+  --status-risk: #a83232;
+  --status-ok-tint: #e5f2ed;
+  --status-warn-tint: #f8f0e2;
+  --status-risk-tint: #f8eaea;
+
+  /* ================= Semantic aliases ================= */
+  /* Text */
+  --text-strong: var(--navy-900);
+  --text-body: var(--grey-800);
+  --text-muted: var(--grey-500);
+  --text-faint: var(--grey-400);
+  --text-accent: var(--navy-700);
+  --text-inverse: var(--grey-0);
+  --text-inverse-muted: var(--navy-200);
+  --text-link: var(--navy-700);
+  --text-link-hover: var(--navy-900);
+
+  /* Surfaces — white is the default and the point */
+  --surface-page: var(--grey-0);
+  --surface-sunken: var(--grey-50);
+  --surface-card: var(--grey-0);
+  --surface-raised: var(--grey-0);
+  --surface-quiet: var(--navy-50);
+  --surface-inverse: var(--navy-900);
+  --surface-inverse-soft: var(--navy-800);
+  --surface-scrim: rgba(9, 30, 57, 0.55);
+
+  /* Borders */
+  --border-hairline: var(--grey-200);
+  --border-default: var(--grey-300);
+  --border-strong: var(--navy-700);
+  --border-inverse: rgba(255, 255, 255, 0.16);
+  --border-focus: var(--axis-network);
+
+  /* Interaction */
+  --action-solid: var(--navy-700);
+  --action-solid-hover: var(--navy-800);
+  --action-solid-press: var(--navy-900);
+  --action-quiet-hover: var(--navy-50);
+  --action-quiet-press: var(--navy-100);
+  --action-disabled-bg: var(--grey-100);
+  --action-disabled-text: var(--grey-400);
+}
