@@ -168,3 +168,6 @@ dist
 
 # Editor
 .vscode/
+
+# Agents
+.claude/
