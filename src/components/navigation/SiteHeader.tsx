@@ -3,7 +3,7 @@ import { Logotype } from '../brand/Logotype';
 import { Button } from '../core/Button';
 
 /**
- * Sticky site header: lockup left, links centre-right, two actions.
+ * Sticky site header: lockup left, links center-right, two actions.
  *
  * The design system's version carries one action. This site has two goals of equal standing, so
  * it carries both — primary solid, secondary ghost. Two solid buttons side by side would read as

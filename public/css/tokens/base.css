@@ -55,13 +55,15 @@ p {
 	margin: 0;
 	text-wrap: pretty;
 }
-a {
+/* :where() keeps this at bare-`a` specificity (0,0,0,1) — a plain `:not(.oo-button)` would
+   score (0,0,1,1) and outrank the class rules that suppress the underline (.oo-header__link). */
+a:not(:where(.oo-button)) {
 	color: var(--text-link);
 	text-decoration: none;
 	border-bottom: 1px solid var(--navy-300);
 	transition: var(--transition-control);
 }
-a:hover {
+a:not(:where(.oo-button)):hover {
 	color: var(--text-link-hover);
 	border-bottom-color: var(--navy-700);
 }

@@ -2,7 +2,7 @@ import { ICONS, type IconName } from './icons';
 
 /**
  * Stroke icons. Weight 1.75 at every size, sizes 16/18/20/24 only, currentColor always —
- * an icon never carries its own colour, and is never filled.
+ * an icon never carries its own color, and is never filled.
  */
 interface IconProps {
 	name: IconName;

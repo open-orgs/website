@@ -10,11 +10,11 @@ export function Principles() {
 					<Eyebrow index={1} tone="accent">
 						The principles
 					</Eyebrow>
-					<h2 class="oo-section__heading">Three constraints, applied without exception</h2>
+					<h2 class="oo-section__heading">Three constraints</h2>
 				</div>
 				<p class="oo-section__aside">
-					Each principle pushes one axis to its extreme. Taken together they describe an organisation that cannot quietly centralise, cannot
-					hoard a skill, and cannot close a boundary.
+					Each principle pushes one axis to its extreme. Taken together they describe an organization where every decision has a route in,
+					every role has more than one holder, and every boundary stays open.
 				</p>
 			</div>
 			<div class="oo-principles__grid">

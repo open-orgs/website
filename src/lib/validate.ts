@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ORGANISATION_TYPES } from '../content/axes';
+import { ORGANIZATION_TYPES } from '../content/axes';
 
 /**
  * Messages are what the user reads, so they explain the constraint rather than the control —
@@ -14,8 +14,8 @@ const optional = (max: number) => z.string().trim().max(max, 'That is longer tha
 const email = (message: string) => required(200, message).pipe(z.email('That email address is not valid.'));
 
 export const signSchema = z.object({
-	organisationName: required(200, 'Name the organisation adopting the principles.'),
-	organisationType: z.enum(ORGANISATION_TYPES, 'Choose the closest organisation type.'),
+	organizationName: required(200, 'Name the organization adopting the principles.'),
+	organizationType: z.enum(ORGANIZATION_TYPES, 'Choose the closest organization type.'),
 	contactName: required(120, 'Give a name we can address a reply to.'),
 	contactEmail: email('Give an email address we can reply to.'),
 	role: optional(120),
@@ -23,10 +23,10 @@ export const signSchema = z.object({
 });
 
 export const consultationSchema = z.object({
-	organisationName: required(200, 'Name the organisation the call is about.'),
+	organizationName: required(200, 'Name the organization the call is about.'),
 	contactName: required(120, 'Give a name we can address a reply to.'),
 	contactEmail: email('Give an email address we can reply to.'),
-	organisationType: z.enum(ORGANISATION_TYPES).optional().or(z.literal('')),
+	organizationType: z.enum(ORGANIZATION_TYPES).optional().or(z.literal('')),
 	context: optional(4000),
 });
 

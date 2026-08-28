@@ -1,6 +1,6 @@
 /**
  * The three principles. Names, order and axis wording are fixed by the brand and must never
- * be abbreviated, pluralised or re-worded. Ported verbatim from the design system's AXES table
+ * be abbreviated, pluralized or re-worded. Ported verbatim from the design system's AXES table
  * (.claude/skills/open-orgs-design/components/brand/AxisMark.jsx) — this file is the only
  * source of truth for them in the app.
  */
@@ -51,7 +51,7 @@ export const PRINCIPLE_COPY: Record<AxisKey, string> = {
 	network: 'Every boundary is an interface. If a process cannot be joined from outside, it is not finished.',
 };
 
-/** What each principle asks an organisation to actually do. */
+/** What each principle asks an organization to actually do. */
 export const PRACTICE: Record<AxisKey, { title: string; body: string }> = {
 	decision: {
 		title: 'Decision register',
@@ -67,9 +67,9 @@ export const PRACTICE: Record<AxisKey, { title: string; body: string }> = {
 	},
 };
 
-export const ORGANISATION_TYPES = ['Enterprise', 'SME', 'Startup', 'Academic', 'Public sector', 'Co-operative'] as const;
+export const ORGANIZATION_TYPES = ['Enterprise', 'SME', 'Startup', 'Academic', 'Public sector', 'Cooperative'] as const;
 
 /** Who the principles are addressed to. Deliberately broad — not a claim about adoption. */
-export const AUDIENCES = ['Enterprise', 'SME', 'Startups', 'Academic', 'Public sector', 'Co-operatives'] as const;
+export const AUDIENCES = ['Enterprise', 'SME', 'Startups', 'Academic', 'Public sector', 'Cooperatives'] as const;
 
-export const STATEMENT = 'Organisations are networks, or they are bottlenecks.';
+export const STATEMENT = 'In pursuit of the optimal organization.';

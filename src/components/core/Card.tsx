@@ -3,7 +3,7 @@ import type { AxisKey } from '../../content/axes';
 
 /**
  * White surface, hairline border, 16px radius. Shadow appears on hover only, never at rest.
- * `axis` paints a 2px top edge in a principle colour.
+ * `axis` paints a 2px top edge in a principle color.
  */
 interface CardProps {
 	children?: Child;

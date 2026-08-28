@@ -1,7 +1,7 @@
 import { Dialog } from '../components/feedback/Dialog';
 import { Input } from '../components/forms/Input';
 import { Select } from '../components/forms/Select';
-import { ORGANISATION_TYPES } from '../content/axes';
+import { ORGANIZATION_TYPES } from '../content/axes';
 
 /**
  * Requesting an advisory call. Nothing here is stored — the request is sent on by email and
@@ -13,14 +13,14 @@ export function ConsultationForm({ turnstileSiteKey }: { turnstileSiteKey: strin
 			name="consultation"
 			eyebrow="Consultation"
 			title="Request a call"
-			intro="A conversation about what adopting the principles would mean for your organisation. No cost, no engagement."
+			intro="A conversation about what adopting the principles would mean for your organization. No cost, no engagement."
 			submitLabel="Request a consultation"
 			turnstileSiteKey={turnstileSiteKey}
 		>
-			<Input id="consult-organisation" name="organisationName" label="Organisation" required autocomplete="organization" />
+			<Input id="consult-organization" name="organizationName" label="Organization" required autocomplete="organization" />
 			<Input id="consult-name" name="contactName" label="Your name" required autocomplete="name" />
 			<Input id="consult-email" name="contactEmail" label="Your email" type="email" required autocomplete="email" />
-			<Select id="consult-type" name="organisationType" label="Organisation type" options={ORGANISATION_TYPES} />
+			<Select id="consult-type" name="organizationType" label="Organization type" options={ORGANIZATION_TYPES} />
 			<Input
 				id="consult-context"
 				name="context"

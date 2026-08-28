@@ -10,7 +10,7 @@ export default defineConfig({
 	plugins: [
 		cloudflareTest({
 			// wrangler.jsonc marks the `send_email` binding `remote: true` so that `wrangler dev`
-			// reaches the real Email Sending service. The pool honours that by default, which opens
+			// reaches the real Email Sending service. The pool honors that by default, which opens
 			// an authenticated connection to the account on every test run — it needs credentials,
 			// needs the network, and costs seconds of startup. Tests stub the binding, so turn it
 			// off and keep the suite fully local.

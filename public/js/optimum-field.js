@@ -2,7 +2,7 @@
  * The optimum field. Ported from the design system's OptimumField component — the logic was
  * already plain DOM work, so it lifts out of React unchanged.
  *
- * Three behaviours are load-bearing and were each learned by breaking them:
+ * Three behaviors are load-bearing and were each learned by breaking them:
  *   1. The viewBox tracks the container's own pixel box, with all geometry as fractions of it,
  *      so scale is 1:1 and nothing is cropped. Re-measured on resize and via ResizeObserver,
  *      because a hero's aspect changes with layout, not only with window size.

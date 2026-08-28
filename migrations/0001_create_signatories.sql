@@ -1,6 +1,6 @@
 -- Migration number: 0001 	 2026-08-28T00:00:00.000Z
 --
--- Organisations that have signed the principles. Consultation requests are deliberately absent:
+-- Organizations that have signed the principles. Consultation requests are deliberately absent:
 -- they are emailed on and followed up from the inbox, never stored here.
 --
 -- `status` is what a future public signatory list would filter on.
