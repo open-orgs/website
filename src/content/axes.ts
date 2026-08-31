@@ -70,10 +70,10 @@ export const PRACTICE_LEDE =
 
 /** The line under each principle name in Practice: what the constraint actually binds. */
 export const PRACTICE_INTRO: Record<AxisKey, string> = {
-	decision: 'The constraint is on power, not on speed. A route in exists before the decision is drafted, and the decider still decides.',
-	skills:
-		'The constraint is on tenure, not on people. A role is held for a stated term, and the term is what makes a better holder findable.',
-	network: 'The constraint is on the boundary, not on secrecy. What crosses it is decided in advance and written into the contract.',
+	decision:
+		'The focus is on decision quality, not on speed. A way in for those most affected exists before the decision is drafted, and the decider still decides.',
+	skills: 'The focus is on tenure, not on people. A role is held for a stated term, and the term is what makes a better holder findable.',
+	network: 'The focus is on the boundary, not on secrecy. What crosses it is decided in advance and written into the contract.',
 };
 
 /** The wrong reading of each principle. Rendered as a warn Callout under its practices. */
@@ -83,8 +83,8 @@ export const PRACTICE_CAVEAT: Record<AxisKey, { title: string; body: string }> =
 		body: 'All Affected guarantees a route in, not a veto. Averaging every position produces a decision nobody argued for, so the elected role still decides, and stands behind it: the alternatives weighed, the reason chosen, the objections not resolved.',
 	},
 	skills: {
-		title: 'Replaceability is not churn',
-		body: 'Constant rotation has a real cost: everyone who depends on a role has to re-learn it, and a promising change often underdelivers. That is exactly why the change is bound to a scheduled mandate review rather than to a crisis or a resignation. The competition is continuous. The switch is not.',
+		title: 'Competition is not turnover',
+		body: 'Constant rotation has a real cost: everyone who depends on a role has to get used to a new person and new ways of working, and a promising change often underdelivers. So a mandate comes with a minimum stay: the holder cannot apply for another role until it is served. That length is the setting, longer for stability and shorter for change. The competition is continuous. The switch is not.',
 	},
 	network: {
 		title: 'Open is not public',
@@ -121,22 +121,22 @@ export const PRACTICE: Record<AxisKey, Practice[]> = {
 	],
 	skills: [
 		{
-			title: 'Two-deep audit',
-			body: 'Each critical role names a second and a third holder, and both have actually held it for a full cycle with the first holder unreachable. Two-deep is not vacation coverage. It is the floor that makes replacement possible at all: a role only one person can hold cannot be reviewed, only defended.',
-			do: "Rotate the second holder in for a real cycle, and write the role's knowledge where a stranger could find it.",
+			title: 'Every role has a second',
+			body: 'Indispensability is something an organization builds, not a quality a person has. So every critical role is assigned a second: a vice who supports the work week to week and is trusted with calls of their own. Without one, the role cannot be put up for renomination, only defended. Competition for a role starts with there being someone to compete.',
+			do: "Rotate the second holder in for a real cycle, and write the role's knowledge where the next holder could find it.",
 			dont: 'Name a successor who has never made a decision the role owns.',
 		},
 		{
 			title: 'Fixed mandates',
-			body: "Every role is held for a stated term with a stated end date, the founder's included. The term ends whether or not anyone has complained, and ending it is not an accusation. This is what stops ownership, a contract clause, or long tenure from quietly converting a role into a permanent seat.",
+			body: 'Every role is held for a stated term with a stated end date. Founder is not a role: it is a fact about who started the company, it stays true for life, and no seat comes with it. A founder who is still the best CEO keeps the job by winning it again, a stronger claim on it than never having been asked. What ends is the mandate, not the relationship: there is a handover, and the outgoing holder is placed where their experience is now worth most.',
 			do: "Publish each mandate's start, its end, and the criteria the next review will measure.",
 			dont: 'Treat "nothing has gone wrong" as the case for renewal.',
 		},
 		{
 			title: 'Open renomination',
-			body: 'Before a mandate ends the role is opened, and the incumbent applies against the field with a written plan like anyone else. The committee compares plans against published criteria, not people against incumbency. Continuity is a legitimate result. It just has to win.',
-			do: 'Run the search before deciding the outcome, and publish which criteria the winning plan met.',
-			dont: 'Open a role only after a failure, or run a search whose result was settled beforehand.',
+			body: 'Before a mandate ends the role is opened, and the incumbent applies for it with a written plan like anyone else. The committee compares plans against published criteria, not candidates against the incumbent. Continuity is a legitimate result. It just has to win.',
+			do: 'Decide after the applications are in, not before, and publish which criteria the winning plan met.',
+			dont: 'Seat the incumbent, or the person who picked them, on the committee that decides the renewal.',
 		},
 	],
 	network: [
