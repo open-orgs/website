@@ -332,7 +332,7 @@
 }
 .oo-badge--warn {
 	background: var(--status-warn-tint);
-	color: var(--status-warn);
+	color: var(--status-warn-text);
 }
 .oo-badge--risk {
 	background: var(--status-risk-tint);
@@ -540,7 +540,7 @@
 	color: var(--axis-skills);
 }
 .oo-principle--network .oo-principle__axis {
-	color: var(--axis-network);
+	color: var(--axis-network-text);
 }
 
 .oo-principle__name {
@@ -600,7 +600,7 @@
 	color: var(--axis-skills);
 }
 .oo-practice__group--network .oo-practice__axis {
-	color: var(--axis-network);
+	color: var(--axis-network-text);
 }
 
 .oo-practice__principle {
@@ -623,7 +623,7 @@
 	gap: var(--space-md);
 }
 
-/* Nine of these stack, so the axis edge is tinted to the same 0.45 the principle cards use.
+/* A column of these stacks, so the axis edge is tinted to the same 0.45 the principle cards use.
    At full strength a repeated 2px rule stops reading as identity and starts reading as a border. */
 .oo-practice__row .oo-card__edge {
 	opacity: 0.45;
@@ -721,7 +721,7 @@
 	color: var(--status-ok);
 }
 .oo-callout--warn .oo-callout__title {
-	color: var(--status-warn);
+	color: var(--status-warn-text);
 }
 .oo-callout--risk .oo-callout__title {
 	color: var(--status-risk);

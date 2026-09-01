@@ -18,7 +18,7 @@ const NAV = [
 ];
 
 // Both columns are derived, so neither can drift from the section it names. The footer lists the
-// first practice of each axis, not all nine: it is a pointer, not the chapter.
+// first practice of each axis, not the full set: it is a pointer, not the chapter.
 const FOOTER_COLUMNS = [
 	{ title: 'Principles', items: AXIS_ORDER.map((k) => AXES[k].label) },
 	{ title: 'Practice', items: AXIS_ORDER.map((k) => PRACTICE[k][0].title) },
