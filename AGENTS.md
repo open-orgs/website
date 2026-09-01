@@ -46,3 +46,8 @@ Never use an em dash (—) in website copy: visible UI text, email subject lines
 titles, meta descriptions, aria-labels, or any other user-facing string. Use a colon, comma, period,
 or semicolon instead, whichever reads most naturally for the sentence. This applies to copy only,
 not code comments.
+
+Brand vocabulary: principle, constraint, axis, route, register, interface, boundary, unit, affected
+party, two-deep, signatory, adopt, publish, test, failure mode. A unit is whatever has a boundary an
+interface can sit on: a role, a team, a company. Prefer it where the copy has to say whose boundary
+is meant; boundary alone stands where possession is not in question.
