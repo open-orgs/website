@@ -48,7 +48,7 @@ export const AXIS_ORDER: AxisKey[] = ['decision', 'skills', 'network'];
 export const PRINCIPLE_COPY: Record<AxisKey, string> = {
 	decision: 'Everyone materially affected by a decision has a route into it before it is drafted: not a veto, a route.',
 	skills: 'Every role has at least two people who can hold it. Indispensability is a defect, not a distinction.',
-	network: 'Every boundary is an interface. If a process cannot be joined from outside, it is not finished.',
+	network: 'Every boundary is an interface. A unit that cannot be joined from outside is not open.',
 };
 
 /**
@@ -73,7 +73,7 @@ export const PRACTICE_INTRO: Record<AxisKey, string> = {
 	decision:
 		'The focus is on decision quality, not on speed. A way in for those most affected exists before the decision is drafted, and the decider still decides.',
 	skills: 'The focus is on tenure, not on people. A role is held for a stated term, and the term is what makes a better holder findable.',
-	network: 'The focus is on the boundary, not on secrecy. What crosses it is decided in advance and written into the contract.',
+	network: 'The focus is on the unit boundary, not on secrecy. What crosses it is decided in advance and written into the contract.',
 };
 
 /** The wrong reading of each principle. Rendered as a warn Callout under its practices. */
@@ -142,15 +142,15 @@ export const PRACTICE: Record<AxisKey, Practice[]> = {
 	network: [
 		{
 			title: 'Interface inventory',
-			body: 'Every internal process publishes the interface an outsider would use: the input it accepts, the output it returns, and who is entitled to call it. That covers software, and also accounting, roles, partners and subcontracting. Closure is the default and opening is the work, so the inventory is a list of what is still closed, with an owner and a date against each line.',
-			do: 'Decide in advance where the outside may connect: which code is open, which APIs, which contracts, which programs.',
-			dont: 'Count a relationship, an introduction, or a shared inbox as an interface.',
+			body: 'An interface is a place where a party can contribute without a prior relationship. It documents how to interact with it, names the role that owns it, states who may use it, and sets the terms. That covers code and APIs, and equally roles, teams, contracts, suppliers and subcontracting. Written down, the work belongs to the interface rather than to whoever happens to be doing it, so it can be measured and taken over by anyone who can meet it: a colleague, a supplier, a system. The inventory is the interfaces still unwritten, with an owner and a date against each line.',
+			do: 'Document each interface as if for a stranger: how it is used, the role that owns it, who may call on it, and on what terms.',
+			dont: 'Count an internal interaction as an interface: nothing is an interface until a party outside the unit asks for it.',
 		},
 		{
 			title: 'Right of access',
-			body: 'Access is written into the contract, not granted as a favor. Every affected party, employee, partner, supplier or customer, has a named route to the records that bear on them: accounting, role criteria, subcontractor terms. Secrecy is justified by the harm it prevents, never by the scrutiny it avoids.',
-			do: 'Name in the contract what an affected party may read, and how they ask for it.',
-			dont: 'Classify as confidential what puts no one at physical or psychological risk.',
+			body: 'Every affected party, employee, partner, supplier or customer, has a named route to the records that bear on them: accounting, role criteria, subcontractor terms. Secrecy is justified by the harm it prevents, never by the scrutiny it avoids.',
+			do: 'Put the request route in the interface terms, and make every refusal name the harm that outweighs the stake of the party asking.',
+			dont: 'Mark a record confidential once and let the label answer every party who asks after. Answer anywhere but the interface and there is no route, only a person.',
 		},
 		{
 			title: 'Exit test',
