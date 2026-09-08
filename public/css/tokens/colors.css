@@ -59,6 +59,19 @@
 	--text-link: var(--navy-700);
 	--text-link-hover: var(--navy-900);
 
+	/* Two hues are legible as a mark and illegible as a sentence. These are the text-safe
+	   substitutes: use them wherever the hue lands on a `color:`, never on a fill or a rule.
+
+	   --axis-network at #3e7fd8 is 3.78:1 on the sunken band and 4.01:1 on white, under the 4.5:1
+	   normal-text floor. Darkened just enough to clear it (5.02:1 sunken, 5.33:1 white, 4.65:1 on
+	   its own tint) and no further: the axis labels appear as a stack of three, so network has to
+	   stay visibly lighter than --axis-decision, which is #123a6b and therefore also --navy-700.
+	   Substituting navy would make two of the three principles the same color.
+
+	   --status-warn at #b4762a is 3.33:1 on its tint. --ember-600 is the same hue at 5.11:1. */
+	--axis-network-text: #2a6ac2;
+	--status-warn-text: var(--ember-600);
+
 	/* Surfaces — white is the default and the point */
 	--surface-page: var(--gray-0);
 	--surface-sunken: var(--gray-50);

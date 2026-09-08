@@ -9,7 +9,7 @@ import { Join } from '../sections/Join';
 import { SignForm } from '../forms/SignForm';
 import { ConsultationForm } from '../forms/ConsultationForm';
 import { Toast } from '../components/feedback/Toast';
-import { AXES, AXIS_ORDER } from '../content/axes';
+import { AXES, AXIS_ORDER, PRACTICE } from '../content/axes';
 
 const NAV = [
 	{ href: '#principles', label: 'Principles' },
@@ -17,9 +17,11 @@ const NAV = [
 	{ href: '#join', label: 'Join' },
 ];
 
+// Both columns are derived, so neither can drift from the section it names. The footer lists the
+// first practice of each axis, not the full set: it is a pointer, not the chapter.
 const FOOTER_COLUMNS = [
 	{ title: 'Principles', items: AXIS_ORDER.map((k) => AXES[k].label) },
-	{ title: 'Practice', items: ['Decision register', 'Two-deep audit', 'Interface inventory'] },
+	{ title: 'Practice', items: AXIS_ORDER.map((k) => PRACTICE[k][0].title) },
 ];
 
 export function HomePage({ turnstileSiteKey }: { turnstileSiteKey: string }) {

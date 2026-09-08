@@ -6,6 +6,11 @@ import type { AxisKey } from '../../content/axes';
  *
  * Geometry is fixed — hub r 4, satellites r 2.6, every spoke 22.0, left/right node span 22.0.
  * Do not nudge these numbers.
+ *
+ * `dashed` holds indices into `edges`, not node ids. The design system prototype reads it as node
+ * ids, which means mark 02's dashed successor edge never actually renders dashed there — but the
+ * readme is explicit that the dashed edge is the whole point of that mark ("the successor already
+ * in place"), so this is a deliberate divergence from the prototype, not a porting slip.
  */
 const GEO: Record<
 	AxisKey,
@@ -102,7 +107,7 @@ export function AxisMark({ axis, size = 56, active, tone = 'default', class: cls
 						y1={g.nodes[a][1]}
 						x2={g.nodes[b][0]}
 						y2={g.nodes[b][1]}
-						stroke-dasharray={g.dashed && g.dashed.includes(b) && i === g.edges.length - 1 ? '2 3' : undefined}
+						stroke-dasharray={g.dashed?.includes(i) ? '2 3' : undefined}
 					/>
 				))}
 			</g>

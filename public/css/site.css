@@ -65,6 +65,13 @@
 	padding-bottom: var(--layout-section-y-tight);
 }
 
+/* A band is 72px because a band is a strip. Practice is a chapter now, and 72px above it reads as
+   a crop rather than as air, so it takes the full section rhythm instead. */
+.oo-band--tall > .oo-band__inner {
+	padding-top: var(--layout-section-y);
+	padding-bottom: var(--layout-section-y);
+}
+
 /* ================= Brand ================= */
 
 .oo-logotype {
@@ -325,7 +332,7 @@
 }
 .oo-badge--warn {
 	background: var(--status-warn-tint);
-	color: var(--status-warn);
+	color: var(--status-warn-text);
 }
 .oo-badge--risk {
 	background: var(--status-risk-tint);
@@ -533,7 +540,7 @@
 	color: var(--axis-skills);
 }
 .oo-principle--network .oo-principle__axis {
-	color: var(--axis-network);
+	color: var(--axis-network-text);
 }
 
 .oo-principle__name {
@@ -560,30 +567,171 @@
 
 /* ================= Practice ================= */
 
+/* One group per principle. The hairline is the chapter break; the first group does not get one
+   because the section head is already above it. */
+.oo-practice__group {
+	margin-top: var(--space-4xl);
+}
+
+.oo-practice__group + .oo-practice__group {
+	padding-top: var(--space-4xl);
+	border-top: var(--layout-rule) solid var(--border-hairline);
+}
+
+.oo-practice__group-head {
+	display: grid;
+	grid-template-columns: 56px 1fr;
+	align-items: start;
+	gap: var(--space-xl);
+}
+
+/* Mono means numbered, measured or machine-readable — the axis label qualifies. */
+.oo-practice__axis {
+	font-family: var(--font-mono);
+	font-size: var(--size-2xs);
+	letter-spacing: var(--tracking-eyebrow);
+	text-transform: uppercase;
+}
+
+.oo-practice__group--decision .oo-practice__axis {
+	color: var(--axis-decision);
+}
+.oo-practice__group--skills .oo-practice__axis {
+	color: var(--axis-skills);
+}
+.oo-practice__group--network .oo-practice__axis {
+	color: var(--axis-network-text);
+}
+
+.oo-practice__principle {
+	margin-top: var(--space-sm);
+}
+
+.oo-practice__intro {
+	margin-top: var(--space-md);
+	max-width: 58ch;
+	font-family: var(--font-serif);
+	font-weight: var(--weight-light);
+	font-size: var(--size-lg);
+	line-height: var(--leading-snug);
+	color: var(--gray-700);
+}
+
 .oo-practice__rows {
 	margin-top: var(--space-2xl);
 	display: grid;
 	gap: var(--space-md);
 }
 
+/* A column of these stacks, so the axis edge is tinted to the same 0.45 the principle cards use.
+   At full strength a repeated 2px rule stops reading as identity and starts reading as a border. */
+.oo-practice__row .oo-card__edge {
+	opacity: 0.45;
+}
+
+/* Left column states the practice, right column states what it rules in and out. */
 .oo-practice__row {
 	display: grid;
-	grid-template-columns: 56px 1fr;
-	align-items: center;
-	gap: var(--space-xl);
+	grid-template-columns: 1.1fr 1fr;
+	align-items: start;
+	gap: var(--space-2xl);
 }
 
 .oo-practice__title {
 	font-size: var(--size-md);
-	font-family: var(--font-sans);
-	font-weight: var(--weight-semibold);
-	line-height: var(--leading-snug);
 }
 
 .oo-practice__body {
-	margin-top: 4px;
+	margin-top: var(--space-sm);
 	font-size: var(--size-sm);
-	color: var(--text-muted);
+	line-height: var(--leading-body);
+	color: var(--text-body);
+}
+
+.oo-practice__rules {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-lg);
+	padding-left: var(--space-2xl);
+	border-left: var(--layout-rule) solid var(--border-hairline);
+}
+
+/* The check and the cross are the only colored marks on the card. The sentence stays body color:
+   the do and the don't carry the same weight, only opposite signs. */
+.oo-practice__rule-label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-family: var(--font-mono);
+	font-size: var(--size-3xs);
+	font-weight: var(--weight-medium);
+	letter-spacing: var(--tracking-eyebrow);
+	text-transform: uppercase;
+}
+
+.oo-practice__rule--do .oo-practice__rule-label {
+	color: var(--status-ok);
+}
+.oo-practice__rule--dont .oo-practice__rule-label {
+	color: var(--status-risk);
+}
+
+.oo-practice__rule-text {
+	margin-top: 6px;
+	font-size: var(--size-xs);
+	line-height: var(--leading-body);
+	color: var(--text-body);
+}
+
+.oo-practice__caveat {
+	margin-top: var(--space-xl);
+}
+
+/* ================= Callout ================= */
+
+/* The only colored left rule in the system. Square on the left so the rule reads as a rule. */
+.oo-callout {
+	border-left: 2px solid var(--navy-700);
+	border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+	background: var(--surface-quiet);
+	padding: var(--space-lg) var(--space-xl);
+}
+
+.oo-callout--ok {
+	border-left-color: var(--status-ok);
+	background: var(--status-ok-tint);
+}
+.oo-callout--warn {
+	border-left-color: var(--status-warn);
+	background: var(--status-warn-tint);
+}
+.oo-callout--risk {
+	border-left-color: var(--status-risk);
+	background: var(--status-risk-tint);
+}
+
+.oo-callout__title {
+	margin-bottom: var(--space-xs);
+	font-size: var(--size-sm);
+	font-weight: var(--weight-semibold);
+	color: var(--navy-800);
+}
+
+.oo-callout--ok .oo-callout__title {
+	color: var(--status-ok);
+}
+.oo-callout--warn .oo-callout__title {
+	color: var(--status-warn-text);
+}
+.oo-callout--risk .oo-callout__title {
+	color: var(--status-risk);
+}
+
+.oo-callout__body {
+	max-width: 78ch;
+	font-size: var(--size-sm);
+	line-height: 1.55;
+	color: var(--text-body);
 }
 
 /* ================= Inverse band ================= */
@@ -1063,9 +1211,24 @@
 	}
 
 	.oo-section,
-	.oo-inverse__inner {
+	.oo-inverse__inner,
+	.oo-band--tall > .oo-band__inner {
 		padding-top: var(--space-5xl);
 		padding-bottom: var(--space-5xl);
+	}
+
+	/* The rules stack under the description rather than beside it, so the divider becomes a rule
+	   between them instead of a column edge. */
+	.oo-practice__row {
+		grid-template-columns: 1fr;
+		gap: var(--space-xl);
+	}
+
+	.oo-practice__rules {
+		padding-left: 0;
+		padding-top: var(--space-xl);
+		border-left: 0;
+		border-top: var(--layout-rule) solid var(--border-hairline);
 	}
 
 	.oo-hero__inner {
@@ -1098,7 +1261,7 @@
 		margin-left: auto;
 	}
 
-	.oo-practice__row {
+	.oo-practice__group-head {
 		grid-template-columns: 1fr;
 		gap: var(--space-md);
 	}

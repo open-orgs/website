@@ -2,6 +2,7 @@ import { createExecutionContext, waitOnExecutionContext } from 'cloudflare:test'
 import { env } from 'cloudflare:workers';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import worker from '../src';
+import { AXIS_ORDER, PRACTICE } from '../src/content/axes';
 
 const SITEVERIFY = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
@@ -137,6 +138,33 @@ describe('GET /', () => {
 
 		const order = html.match(/All Affected|No One Is Indispensable|Open Systems/g) ?? [];
 		expect(order.slice(0, 3)).toEqual(['All Affected', 'No One Is Indispensable', 'Open Systems']);
+	});
+
+	it('renders every practice with both a do and a dont', async () => {
+		const ctx = createExecutionContext();
+		const html = await (await worker.fetch(new Request('https://openorgs.org/'), env, ctx)).text();
+		await waitOnExecutionContext(ctx);
+
+		const titles = AXIS_ORDER.flatMap((k) => PRACTICE[k].map((p) => p.title));
+		for (const title of titles) expect(html).toContain(title);
+
+		// Group sizes may differ by axis, but a principle that thins below three practices has
+		// stopped being auditable, which is the whole claim the section makes.
+		for (const axis of AXIS_ORDER) expect(PRACTICE[axis].length).toBeGreaterThanOrEqual(3);
+
+		// A practice without its don't is a slogan: the don't is what makes adoption testable.
+		expect(html.match(/oo-practice__rule--do\b/g)).toHaveLength(titles.length);
+		expect(html.match(/oo-practice__rule--dont\b/g)).toHaveLength(titles.length);
+	});
+
+	// AGENTS.md bans the em dash in every user-facing string, and Practice alone is ~1,800 words
+	// of copy. Guard the rule rather than relying on review catching one.
+	it('contains no em dash in the rendered page', async () => {
+		const ctx = createExecutionContext();
+		const html = await (await worker.fetch(new Request('https://openorgs.org/'), env, ctx)).text();
+		await waitOnExecutionContext(ctx);
+
+		expect(html).not.toContain('—');
 	});
 
 	// The prototype's fabricated stat, invented testimonial and imaginary review process must
